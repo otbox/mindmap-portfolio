@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+h1 {
+  font-family: var(--font-nova-square), sans-serif;
+}
+
+.chromatic-text {
+  @apply text-4xl font-bold tracking-widest;
+  font-family: 'Courier New', monospace;
+  text-shadow: 
+    3px 3px 1px rgba(0, 13, 255, 1),
+    -3px -3px 1px rgba(255, 0, 0, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-square: var(--font-nova-square);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

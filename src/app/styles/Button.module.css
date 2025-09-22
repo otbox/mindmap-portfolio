@@ -1,0 +1,109 @@
+/* Button Component Styles */
+.languageButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: relative;
+}
+
+.languageButton:hover {
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.languageButtonInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.languageButtonBr {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.languageButtonEn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+/* Technology buttons */
+.techButton {
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  color: #1f2937;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.techButton:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(59, 130, 246, 0.3);
+  background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+}
+
+.techButtonText {
+  font-weight: bold;
+  font-size: 1.125rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Social media buttons */
+.socialButton {
+  padding: 1rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.socialButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.socialButton:hover::before {
+  opacity: 1;
+}
+
+.socialButton:hover {
+  transform: scale(1.15) rotate(-5deg);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.linkedinButton {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+}
+
+.githubButton {
+  background: linear-gradient(135deg, #374151, #1f2937);
+}

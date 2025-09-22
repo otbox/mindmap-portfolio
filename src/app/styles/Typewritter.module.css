@@ -1,0 +1,67 @@
+/* Typewriter Animation Styles */
+.typewriter {
+  overflow: hidden;
+  border-right: 4px solid rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation: 
+    typing 3.5s steps(40, end),
+    blinkCaret 0.75s step-end infinite;
+}
+
+.typewriterText {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { 
+    width: 0; 
+  }
+  to { 
+    width: 100%; 
+  }
+}
+
+/* Cursor blinking animation */
+@keyframes blinkCaret {
+  from, to { 
+    border-color: transparent; 
+  }
+  50% { 
+    border-color: rgba(255, 255, 255, 0.8); 
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .typewriterText {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriterText {
+    font-size: 2rem;
+  }
+  
+  .typewriter {
+    letter-spacing: 0.05em;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriterText {
+    font-size: 1.5rem;
+  }
+  
+  .typewriter {
+    border-right-width: 2px;
+  }
+}
