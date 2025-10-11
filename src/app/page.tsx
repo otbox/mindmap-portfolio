@@ -7,7 +7,7 @@ import LanguageButton from './components/LanguageButton';
 import cardStyles from './styles/Card.module.css';
 import buttonStyles from './styles/Button.module.css';
 import layoutStyles from './styles/Layout.module.css';
-import { ContentType, LanguageType, MainContent, Project } from './assets/mainText';
+import { ContentType, LanguageType, MainContent, Project, projectLinks, technologies } from './assets/mainText';
 
 // Tipos TypeScript
 
@@ -15,10 +15,8 @@ const Home: React.FC = () => {
   const [language, setLanguage] = useState<LanguageType>('pt');
   const [isClient, setIsClient] = useState<boolean>(false);
 
-  // Para evitar hydration issues
   useEffect(() => {
     setIsClient(true);
-    // Detectar idioma do navegador
     const userLang: string = navigator.language || (navigator as any).userLanguage;
     if (userLang.startsWith('pt')) {
       setLanguage('pt');
@@ -40,20 +38,9 @@ const Home: React.FC = () => {
   const currentContent: ContentType = MainContent[language];
   
   // Configuração dos links dos projetos
-  const projectLinks = [
-    [
-      { href: 'https://github.com/otbox/TCC', emoji: '💻' },
-      { href: 'https://estufa-5414b.web.app/', emoji: '🔗' }
-    ],
-    [
-      { href: 'https://loja-705b4.web.app/', emoji: '🔗' }
-    ],
-    [
-      { href: '#', emoji: '💻', disabled: true }
-    ]
-  ];
 
-  const technologies: string[] = ['HTML', 'CSS', 'JS', 'TS', 'React', 'Flutter', 'Git', 'Linux', 'SQL', 'Java', 'C'];
+
+  
 
   return (
     <div className={layoutStyles.container}>
@@ -92,11 +79,14 @@ const Home: React.FC = () => {
             key={index}
             title={project.title}
             description={project.description}
-            links={projectLinks[index] || []}
+            links={projectLinks[index]}
             imageEmoji="💻"
           />
         ))}
       </div>
+      <a href="" className={`${buttonStyles.techButton}`}>
+        {currentContent.projectsButton}
+      </a>
 
       {/* Technologies Section */}
       <h2 className={layoutStyles.sectionTitle}>{currentContent.technologies}</h2>

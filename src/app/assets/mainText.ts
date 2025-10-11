@@ -2,6 +2,7 @@ export interface ContentType {
   title: string;
   about: string;
   projects: string;
+  projectsButton: string,
   technologies: string;
   socialMedia: string;
   aboutText1: string;
@@ -22,11 +23,27 @@ export interface ContentData {
   en: ContentType;
 }
 
+export const technologies: string[] = ['HTML', 'CSS', 'JS', 'TS', 'React', 'Flutter', 'Git', 'Linux', 'SQL', 'Java', 'C'];
+
+export const projectLinks = [
+  [
+    { href: 'https://github.com/otbox/TCC', emoji: '💻' },
+    { href: 'https://estufa-5414b.web.app/', emoji: '🔗' }
+  ],
+  [
+    { href: 'https://loja-705b4.web.app/', emoji: '🔗' }
+  ],
+  [
+    { href: '#', emoji: '💻', disabled: true }
+  ]
+];
+
 export const MainContent: ContentData = {
     pt: {
       title: "Sou Desenvolvedor",
       about: "Sobre mim",
       projects: "Projetos",
+      projectsButton: "Ver Todos os Projetos",
       technologies: "Tecnologias",
       socialMedia: "Redes Sociais",
       aboutText1: "Eu sou Otávio Marques Cruz, atualmente morando em Limeira. Tenho curiosidade sobre novas tecnologias e busco o autoaperfeiçoamento, não apenas nas minhas habilidades, mas também como pessoa.",
@@ -51,6 +68,7 @@ export const MainContent: ContentData = {
       title: "I'm a Developer",
       about: "About Me",
       projects: "Projects",
+      projectsButton: "See All Projects",
       technologies: "Technologies",
       socialMedia: "Social Media",
       aboutText1: "I'm Otávio Marques Cruz, currently living in Limeira. I have curiosity about new technologies, and i strive for self-improvement, not only in my Abilities, but also as a person.",

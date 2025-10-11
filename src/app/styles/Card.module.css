@@ -8,6 +8,11 @@
     0 10px 10px -5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card:hover {
@@ -15,6 +20,7 @@
   box-shadow: 
     0 25px 50px -12px rgba(0, 0, 0, 0.5),
     0 0 30px rgba(59, 130, 246, 0.3);
+  z-index: 10;
 }
 
 .cardImage {
@@ -25,6 +31,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .cardImage::before {
@@ -51,16 +58,20 @@
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
   gap: 1rem;
+  flex: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .cardTitle {
   font-size: 1.25rem;
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin: 0;
   line-height: 1.4;
+  position: relative;
+  z-index: 3;
 }
 
 .cardDescription {
@@ -68,34 +79,66 @@
   color: #d1d5db;
   line-height: 1.6;
   flex: 1;
+  margin: 0;
+  position: relative;
+  z-index: 3;
 }
 
 .cardLinks {
-  display: flex;
+  display: flex !important;
   gap: 1rem;
   justify-content: center;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 60px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+  position: relative;
+  z-index: 100 !important;
 }
 
 .cardLink {
-  color: #ffffff;
+  color: #ffffff !important;
   transition: all 0.2s ease;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  min-height: 52px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 101 !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .cardLink:hover {
-  color: #60a5fa;
-  background: rgba(96, 165, 250, 0.1);
-  transform: translateY(-2px);
+  color: #60a5fa !important;
+  background: rgba(96, 165, 250, 0.3);
+  transform: translateY(-3px) scale(1.15);
+  box-shadow: 0 6px 16px rgba(96, 165, 250, 0.4);
+  border-color: rgba(96, 165, 250, 0.6);
 }
 
 .cardLinkDisabled {
-  color: #6b7280;
+  color: #6b7280 !important;
   opacity: 0.5;
   cursor: not-allowed;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  min-height: 52px;
+  position: relative;
+  z-index: 101 !important;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 /* About section card */
@@ -107,6 +150,8 @@
     0 20px 25px -5px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .aboutTitle {

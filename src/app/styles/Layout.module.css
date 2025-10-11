@@ -19,7 +19,7 @@
 }
 
 .chromaticTitle {
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-nova-square), sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: bold;
   text-shadow: 
@@ -56,6 +56,9 @@
   gap: 1.5rem;
   padding: 0 2rem;
   margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
 }
 
 .flexContainer {
@@ -69,7 +72,7 @@
 
 .socialSection {
   text-align: center;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 .socialContainer {
