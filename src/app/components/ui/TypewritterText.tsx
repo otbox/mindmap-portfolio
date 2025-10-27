@@ -1,5 +1,5 @@
 import React from 'react';
-import typewriterStyles from '../styles/Typewritter.module.css';
+import typewriterStyles from '@/styles/Typewritter.module.css';
 
 interface TypewriterTextProps {
   text: string;

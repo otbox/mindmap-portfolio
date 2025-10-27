@@ -1,5 +1,5 @@
 import React from 'react';
-import buttonStyles from '../styles/Button.module.css';
+import buttonStyles from '@/styles/Button.module.css';
 
 type LanguageType = 'pt' | 'en';
 

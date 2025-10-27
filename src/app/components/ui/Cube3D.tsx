@@ -1,5 +1,5 @@
 import React from 'react';
-import cubeStyles from '../styles/Cube.module.css';
+import cubeStyles from '@/styles/Cube.module.css';
 
 interface Cube3DProps {
   className?: string;

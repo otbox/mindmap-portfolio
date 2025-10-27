@@ -1,33 +1,26 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Cube3D from './components/Cube3D';
-import TypewriterText from './components/TypewritterText';
-import ProjectCard from './components/ProjectCard';
-import LanguageButton from './components/LanguageButton';
+import Cube3D from './components/ui/Cube3D';
+import TypewriterText from './components/ui/TypewritterText';
+import ProjectCard from './components/ui/ProjectCard';
+import LanguageButton from './components/ui/LanguageButton';
 import cardStyles from './styles/Card.module.css';
 import buttonStyles from './styles/Button.module.css';
 import layoutStyles from './styles/Layout.module.css';
 import { ContentType, LanguageType, MainContent, Project, projectLinks, technologies } from './assets/mainText';
+import useLanguage from './hooks/useLanguage';
 
 // Tipos TypeScript
 
 const Home: React.FC = () => {
-  const [language, setLanguage] = useState<LanguageType>('pt');
+  // const [language, setLanguage] = useState<LanguageType>('pt');
   const [isClient, setIsClient] = useState<boolean>(false);
-
+  
   useEffect(() => {
     setIsClient(true);
-    const userLang: string = navigator.language || (navigator as any).userLanguage;
-    if (userLang.startsWith('pt')) {
-      setLanguage('pt');
-    } else {
-      setLanguage('en');
-    }
+    const {language, setLanguage, toggleLanguage} = useLanguage()
   }, []);
 
-  const switchLanguage = (): void => {
-    setLanguage(prev => prev === 'pt' ? 'en' : 'pt');
-  };
 
   if (!isClient) {
     return <div className={layoutStyles.loadingScreen}>Loading...</div>;
