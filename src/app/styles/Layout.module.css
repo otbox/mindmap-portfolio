@@ -28,6 +28,10 @@
   letter-spacing: 0.1em;
 }
 
+.mainSection{
+  padding:0 1rem;
+}
+
 .homeSection {
   display: flex;
   flex-direction: column;
@@ -54,7 +58,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  padding: 0 2rem;
   margin-bottom: 4rem;
   position: relative;
   z-index: 1;

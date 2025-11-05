@@ -5,11 +5,8 @@ import { error } from "console";
 import '@xyflow/react/dist/style.css';
 import { ReactFlowProvider, Background, BackgroundVariant, ReactFlow } from '@xyflow/react';
 import CustomNode from "../components/Node";
+import { nodeTypes } from "@/components/nodes/types";
 // import "reactflow/dist/style.css";
-
-const nodeTypes = {
-  custom: CustomNode, // link the type to your component
-};
 
 export default function PortfolioPage() {
   const [data, setData] = useState<{ nodes: any[]; edges: any[] } | null>(null);
@@ -24,6 +21,8 @@ export default function PortfolioPage() {
       .then(setData)
       .catch(err => console.error("Error fetching data", err));
   }, []);
+
+  useEffect(() => {console.log(data)}, [data])
 
   if (!data) {
     return <div className="flex items-center justify-center h-screen">Loading graph...</div>;

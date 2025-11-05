@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 
+type LanguageType = 'pt' | 'en';
 
 export default function useLanguage() {
-    type LanguageType = 'pt' | 'en';
-    const [language, setLanguage] = useState<LanguageType>();
+    const [language, setLanguage] = useState<LanguageType>('en');
 
     useEffect(() => {
-          if (typeof window !== 'undefined') {
-    const userLang = navigator.language;
-            setLanguage('pt');
+        if (typeof window !== 'undefined' && navigator.language) {
+            if (navigator.language.includes('pt')) {
+                setLanguage('pt');
+            } else {
+                setLanguage('en');
+            }
         } else {
             setLanguage('en');
         }
-    }, [])
+    }, []);
 
     const toggleLanguage = () => {
         setLanguage(prev => prev === 'pt' ? 'en' : 'pt');

@@ -26,7 +26,7 @@ export async function POST(req: Request) {
   const body = await req.json();
   const newNode = {
     id: (data.nodes.length + 1).toString(),
-    data: { title: body.title, description: body.description },
+    data: { title: body.data.title, description: body.data.description },
     position: body.position || { x: 200, y: 200 },
     type: body.type
   };

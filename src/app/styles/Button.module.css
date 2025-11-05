@@ -39,7 +39,7 @@
 }
 
 /* Technology buttons */
-.techButton {
+.techButton, .AllProjectsButton {
   background: linear-gradient(145deg, #ffffff, #f3f4f6);
   color: #1f2937;
   border-radius: 0.75rem;
@@ -52,6 +52,10 @@
   cursor: default;
 }
 
+.AllProjectsButton{
+  margin-bottom: 1rem;
+}
+
 .techButton:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 
@@ -60,7 +64,33 @@
   background: linear-gradient(145deg, #f8fafc, #e2e8f0);
 }
 
-.techButtonText {
+.AllProjectsButton:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.3);
+  background: linear-gradient(
+    90deg,
+    #e2e8f0 0%,
+    #e2e8f0 25%,
+    #3b82f6 50%,
+    #e2e8f0 75%,
+    #e2e8f0 100%
+  );
+  background-size: 200% 100%;
+  animation: loading-slide 2s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes loading-slide {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+
+.techButtonText, .AllProjectsButton {
   font-weight: bold;
   font-size: 1.125rem;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
